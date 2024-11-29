@@ -62,6 +62,8 @@ The level of security depends on the use case and the tag used. For sensitive da
 
 Avoid hardcoding keys in the app. Fetch keys from a backend and store them securely (e.g., iOS Keychain or Android Keystore).  
 
+
+![sec](sec.png)
 ---
 
 ### Communication Security  
