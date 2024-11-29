@@ -94,3 +94,52 @@ export const decToHex = (value) => {
   const hex = value.toString(16).toUpperCase();
   return hex.length === 1 ? '0' + hex : hex;
 };
+
+//----------------------------------
+
+export const hexToDec = (hex) => {
+  if (typeof hex !== 'string' || !/^[0-9A-Fa-f]+$/.test(hex)) {
+    throw new Error('Invalid hex string');
+  }
+  return parseInt(hex, 16);
+};
+
+export const decToHex = (value) => {
+  if (typeof value !== 'number' || value < 0 || value > 255) {
+    throw new Error('Invalid number: must be between 0 and 255');
+  }
+  const hex = value.toString(16).toUpperCase();
+  return hex.length === 1 ? '0' + hex : hex;
+};
+
+//----------------------------------
+
+
+(() => {
+    const displayMessage = (message, isError = false) => {
+        // Message logic here
+    };
+
+    const startReading = async () => {
+        // NFC reading logic here
+    };
+
+    const writeToNFC = async () => {
+        // NFC writing logic here
+    };
+
+    // Expose methods globally if necessary
+    window.startReading = startReading;
+    window.writeToNFC = writeToNFC;
+})();
+```
+
+---
+
+### Additional Note
+If NFC does not work as expected:
+
+- Test in a physical NFC-capable device, as most desktop browsers and devices do not have NFC hardware.
+- Ensure the site is served over HTTPS, as NFC functionality requires a secure context. You can test this by hosting your app on a platform like GitHub Pages or a local HTTPS server.
+
+Let me know if you face any issues!
